@@ -9,7 +9,7 @@ body {
 .backgroundbox{
 	z-index: 0;
 	background-position: center center; 
-	background-size: 100% auto;
+	background-size: auto 100%;
 	background-repeat: no-repeat;
 	height:100%;
 	width:1300px;
