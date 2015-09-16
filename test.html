@@ -14,13 +14,16 @@
 				padding: 0px 0px 0px 0px;
 			}
 			.backgroundbox{
+				z-index: 0;
 				background-image: url(canoeman.jpg);
 				background-position: center center; 
-				z-index: 0;
+    			background-size: auto 100%;
+    			background-repeat: no-repeat;
 				height:100%;
-				width: 1200px;
-				background-size: 100%;
-				position:absolute;
+				width: 1300px;
+				position: absolute;
+				left:50%;
+				margin-left: -650px;
 			}
 				h1 {
 					font-family: 'papyrus', Helvetica;
@@ -120,21 +123,15 @@
 				}
 
 			.content{
-				z-index: 0;
-				background-image: url(canoeman.jpg);
-				background-position: center center; 
-    			background-size: auto 100%;
-    			background-repeat: no-repeat;
+				z-index: 1;
 				height:100%;
-				width: 1300px;
+				width: 100%;
 				position: absolute;
-				left:50%;
-				margin-left: -650px;
 			}
 				.content table {
 					position: relative;
 					margin:auto auto;
-					width:80%;
+					width:60%;
 					top:28%;
 					height: 600px;
 					text-align: center;
@@ -172,6 +169,9 @@
 			    <td><a href= "index.html"><img src="logo.jpg"></a></td>
 			    <td><blockquote>A Place To Lose <br> Your Mind</blockquote></td>		
 			</table>
+		</div>
+
+		<div class="backgroundbox">
 		</div>
 
 		<nav>
