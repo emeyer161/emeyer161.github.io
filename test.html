@@ -4,7 +4,7 @@
 			
 			body {
 				background-color: #400001;
-				background-image: url(canoeman.jpg);
+				/*background-image: url(canoeman.jpg);*/
 				background-position: center;
 				background-size: auto 100%;
 				background-repeat: no-repeat;
@@ -12,6 +12,15 @@
 				margin: 0px 0px 0px 0px;
 				border: 0px 0px 0px 0px;
 				padding: 0px 0px 0px 0px;
+			}
+			.backgroundbox{
+				background-image: url(canoeman.jpg);
+				background-position: center center; 
+				z-index: 0;
+				height:100%;
+				width: 1200px;
+				background-size: 100%;
+				position:absolute;
 			}
 				h1 {
 					font-family: 'papyrus', Helvetica;
@@ -36,7 +45,7 @@
 					padding-top:35px;
 				}
 				td {
-					/*border: 1px solid black;*/
+					border: 1px solid black;
 	    			vertical-align: middle;
 				}
 
@@ -111,15 +120,23 @@
 				}
 
 			.content{
-				z-index: 1;
+				z-index: 0;
+				background-image: url(canoeman.jpg);
+				background-position: center center; 
+				height:100%;
+				width: 1200px;
+				background-size: 100%;
 				position: absolute;
-				margin-left: 20%;
-				margin-right: 20%;
-				top: 40%;
+				left:50%;
+				margin-left: -600px;
 			}
 				.content table {
+					position: relative;
+					top:48%;
+					height: 300px;
+					margin-left: auto;
+					margin-right: auto;
 					width: 100%;
-					height: 100%;
 					min-width: 450px;
 					text-align: center;
 				}
