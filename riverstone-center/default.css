@@ -30,7 +30,7 @@ html, body {
 		font-size: 25px;
 	}
 	h6{
-		font-family: 'Trebuchet MS';
+		font-family: 'times', Helvetica;
 		font-size: 20px;
 		font-weight: lighter;
 	}
@@ -51,7 +51,7 @@ nav {
 	margin-left:-60px;
 }
 	nav ul {
-		/*opacity: .95;*/
+		opacity: .9;
 		background: #400001; 
 		background: linear-gradient(top, #500001 0%, #300001 100%);  
 		background: -moz-linear-gradient(top, #500001 0%, #300001 100%); 
@@ -73,7 +73,10 @@ nav {
 			color: #000000;
 		}
 		nav ul li a {
-			display: inline-block; padding: 20px 30px;
+			display: inline-block; padding: 10px 30px;
+			font-family: 'times', Helvetica;
+			font-size: 20px;
+			font-weight: lighter;
 		}
 		nav ul li:hover > ul {
 			display:inline-block;
