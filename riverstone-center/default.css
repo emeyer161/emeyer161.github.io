@@ -1,27 +1,33 @@
-body {
+html, body {
 	background: #400001 url(images/stones.jpg);
-	background-size: auto 100%;
+	background-size: auto 300%;
 	color: #FFCDA2;
 	margin: 0px 0px 0px 0px;
 	border: 0px 0px 0px 0px;
 	padding: 0px 0px 0px 0px;
     overflow-x: hidden;
-}
-.backgroundbox{
-	z-index: 0;
-	background-position: center center; 
-	background-size: cover;
-	background-repeat: no-repeat;
-	height:100%;
-	width:1300px;
-	margin-left: 50%;
-	left:-650px;
-	position: absolute;
+    height:100%;
 }
 	h1 {
+		color:black;
 		font-family: 'papyrus', Helvetica;
-		font-size: 40px;
-		text-shadow: 1px 1px #000000;
+		font-weight: bolder;
+		text-shadow: 1px 1px #FFCDA2;
+		font-size: 45px;
+		padding-top:35px;
+	}
+	h2 {
+		color: #FFCDA2;
+		font-family: 'papyrus', Helvetica;
+		text-shadow: 1px 1px black;
+		font-weight: bolder;
+		font-size: 45px;
+	}
+	p{
+		color:black;
+		font-family: 'times', Helvetica;
+		font-weight: lighter;
+		font-size: 25px;
 	}
 	h6{
 		font-family: 'Trebuchet MS';
@@ -32,16 +38,8 @@ body {
 		text-decoration: none;
 		color:#FFCDA2;
 	}
-	blockquote {
-		color:black;
-		font-family: 'papyrus', Helvetica;
-		font-weight: bolder;
-		text-shadow: 1px 1px #FFCDA2;
-		font-size: 40px;
-		padding-top:35px;
-	}
 	td {
-		border: 1px solid black;
+		/*border: 1px solid black;*/
 		vertical-align: middle;
 	}
 
@@ -96,7 +94,7 @@ nav {
 .header{
 	z-index: 2;
 	background-color:#FFFFFF;
-	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 75%,rgba(255,255,255,0) 110%);
+	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 60%,rgba(255,255,255,0) 120%);
 	position: fixed;
 	top:0;
 	width: 100%;
@@ -117,18 +115,38 @@ nav {
 
 .content{
 	z-index: 1;
-	height:100%;
-	width: 100%;
+	top:25%;
+	width: 50%;
+	left:25%;
 	position: absolute;
+	text-align: center;
+	margin-bottom: 40px;
 }
 	.content table {
 		position: relative;
 		margin:auto auto;
-		width:60%;
-		top:28%;
+		width:100%;
 		height: 600px;
 		text-align: center;
 	}
+	.content img{
+		border:4px solid black;
+	}
+
+.backgroundbox{
+	z-index: 0;
+	position:fixed;
+	background-size: cover;
+	height: inherit;
+	width:1300px;
+	margin-left: 50%;
+	left:-650px;
+	margin-bottom: 0;
+	overflow: auto;
+	display: block;
+	bottom:0px;
+	overflow: auto;
+}
 
 .footer {
 	z-index: 3;
