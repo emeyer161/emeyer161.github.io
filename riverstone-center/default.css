@@ -13,8 +13,7 @@ html, body {
 		font-family: 'papyrus', Helvetica;
 		font-weight: bolder;
 		text-shadow: 1px 1px #FFCDA2;
-		font-size: 45px;
-		padding-top:35px;
+		font-size: 50px;
 	}
 	h2 {
 		color: #FFCDA2;
@@ -28,6 +27,7 @@ html, body {
 		font-family: 'times', Helvetica;
 		font-weight: lighter;
 		font-size: 25px;
+		line-height: 150%;
 	}
 	h6{
 		font-family: 'times', Helvetica;
@@ -38,16 +38,32 @@ html, body {
 		text-decoration: none;
 		color:#FFCDA2;
 	}
+	.content a {
+		color:inherit;
+		font-family: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+		line-height: inherit;
+	}
 	td {
 		/*border: 1px solid black;*/
 		vertical-align: middle;
 	}
-
+	blockquote {
+		border-top: 2px black solid;
+		border-bottom: 2px black solid;
+		color: black;
+		text-transform: uppercase;
+		font-size: 26px;
+		font-family: Cambria;
+		text-align: justify;
+		text-align: center;
+	}
 
 nav {
 	position:fixed;
 	z-index:10;
-	top: 30%;
+	top: 35%;
 	margin-left:-60px;
 }
 	nav ul {
@@ -96,13 +112,15 @@ nav {
 
 .header{
 	z-index: 2;
-	background-color:#FFFFFF;
+	background-image: url(images/header.png);
+	background-size:100% 280px;
+	/*background-color:#FFFFFF;
 	background: -webkit-linear-gradient(top, rgba(255,255,255,1) 60%,rgba(255,255,255,0) 120%);
+	*/
 	position: fixed;
 	top:0;
 	width: 100%;
-	height: 200px;
-	opacity: 1;
+	height: 280px;
 	overflow: hidden;
 	white-space: normal;
 }
@@ -115,22 +133,30 @@ nav {
 		min-width: 780px;
 		table-layout: fixed;
 	}
+	.header h1 {
+		padding-top:35px;
+	}
 
 .content{
 	z-index: 1;
 	top:25%;
-	width: 50%;
-	left:25%;
+	width: 56%;
+	left:22%;
 	position: absolute;
 	text-align: center;
 	margin-bottom: 40px;
 }
 	.content table {
+		color: black;
 		position: relative;
 		margin:auto auto;
 		width:100%;
-		height: 600px;
 		text-align: center;
+		table-layout: fixed;
+		font-size: inherit;
+		font-family: inherit;
+		padding-bottom: 20px;
+		border-bottom: 2px black solid;
 	}
 	.content img{
 		border:4px solid black;
@@ -158,6 +184,7 @@ nav {
 	bottom:0;
 	width: 100%;
 	height: 40px;
+	opacity: .9;
 }
 	.footer table {
 		z-index: 3;
