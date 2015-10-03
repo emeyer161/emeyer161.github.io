@@ -20,7 +20,15 @@ html, body {
 		font-family: 'papyrus', Helvetica;
 		text-shadow: 1px 1px black;
 		font-weight: bolder;
-		font-size: 45px;
+		font-size: 35px;
+	}
+	h3 {
+		color:black;
+		font-family: 'Times', Helvetica;
+		font-weight: bold;
+		/*text-shadow: 1px 1px #FFCDA2;*/
+		font-size: 30px;
+		margin:auto;
 	}
 	p{
 		color:black;
@@ -36,6 +44,9 @@ html, body {
 	}
 	a {
 		text-decoration: none;
+		color:inherit;
+	}
+	.footer a {
 		color:#FFCDA2;
 	}
 	.content a {
@@ -45,10 +56,7 @@ html, body {
 		font-size: inherit;
 		line-height: inherit;
 	}
-	td {
-		/*border: 1px solid black;*/
-		vertical-align: middle;
-	}
+
 	blockquote {
 		border-top: 2px black solid;
 		border-bottom: 2px black solid;
@@ -68,12 +76,12 @@ nav {
 }
 	nav ul {
 		opacity: .9;
-		background: #400001; 
-		background: linear-gradient(top, #500001 0%, #300001 100%);  
-		background: -moz-linear-gradient(top, #500001 0%, #300001 100%); 
-		background: -webkit-linear-gradient(top, #500001 0%,#300001 100%); 
+		background: #400001;
+		background: linear-gradient(top, #500001 0%, #300001 100%);
+		background: -moz-linear-gradient(top, #500001 0%, #300001 100%);
+		background: -webkit-linear-gradient(top, #500001 0%,#300001 100%);
 		border: 30px 30px;
-		border-radius: 30px;  
+		border-radius: 30px;
 		list-style: none;
 		position: relative;
 		display: table;
@@ -136,6 +144,23 @@ nav {
 	.header h1 {
 		padding-top:35px;
 	}
+
+.slogan {
+	position: absolute;
+	right:0%;
+	bottom:0%;
+	font-size:150%;
+}
+.home_content{
+	z-index: 1;
+	top:25%;
+	width: 56%;
+	left:22%;
+	position: absolute;
+	text-align: center;
+	bottom:0%;
+	margin-bottom: 40px;
+}
 
 .content{
 	z-index: 1;
