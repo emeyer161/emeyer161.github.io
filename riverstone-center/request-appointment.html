@@ -20,7 +20,7 @@
 			    <td><a href= "index.html"><img src="images/logo.jpg"></a></td>
 				<td></td>
 			    <td>
-			    	<h3><a href="https://www.google.com/maps/place/The+Riverstone+Center/@40.892808,-74.475809,15z/data=!4m2!3m1!1s0x0:0x78f4e0ffe2f1bfcd?sa=X&ved=0CGMQ_BIwDWoVChMIlPqKw5T4xwIVSYI-Ch3xeQcB" target="_blank">21 Second Ave.<br />Denville, NJ 07834</a><br />
+			    	<h3><a href="https://script.google.com/macros/s/AKfycbyH0iGlBid2OejfeCzJZIaaQ2ffiTem8QpkTWjK18k0dzVXlFU/exec" target="_blank">21 Second Ave.<br />Denville, NJ 07834</a><br />
 			    	<a href="tel:973-627-2191">(973)627-2191</a></h3>
 			    </td>
 			</table>
@@ -59,24 +59,48 @@
 		<div class= "content">
 			<img src ="images/house.png">
 			<br>
-			<h1>Contact & Directions</h1>
+			<h1>Request an Appointment</h1>
 
-			<div style="float:left"><p>
-				<b><big>Address:</big></b><br>
-					<a href="https://www.google.com/maps/place/The+Riverstone+Center/@40.892808,-74.475809,15z/data=!4m2!3m1!1s0x0:0x78f4e0ffe2f1bfcd?sa=X&ved=0CGMQ_BIwDWoVChMIlPqKw5T4xwIVSYI-Ch3xeQcB"><b>Riverstone center</b><br>
-					21 Second Ave.<br>
-					Denville, NJ 07834</a><br>
-				<br>
-				<b><big>Contact Me:</big></b><br>
-					<a href="tel:973-627-2191">973.627.2191</a><br>
-				<br>
-				<b><big>Email Me:</big></b><br>
-					<a href="mailto:Jim@RiverStoneCenterNj.com"> Jim@RiverStoneCenterNJ.com</a>
-			</p></div>
+			<form id='appointmentForm' method='POST' action='https://script.google.com/macros/s/AKfycbyH0iGlBid2OejfeCzJZIaaQ2ffiTem8QpkTWjK18k0dzVXlFU/exec'>
 
-			<div style="float:right">
-				<a href="https://www.google.com/maps/place/The+Riverstone+Center/@40.892808,-74.475809,15z/data=!4m2!3m1!1s0x0:0x78f4e0ffe2f1bfcd?sa=X&ved=0CGMQ_BIwDWoVChMIlPqKw5T4xwIVSYI-Ch3xeQcB"><img src="images/map2.png", style="width:70%"></a>
-			</div>
+				<fieldset class="inputGroup">
+					<label for="name" class='inputLabel' >Name: </label><br/>
+					<input type="text" id="name" name="name" placeholder="John Smith" class='userInput' />
+				</fieldset>
+
+				<fieldset class="inputGroup">
+					<label for="email" class='inputLabel'><b>Your</b> Email Address:</label><br/>
+					<input id="email" name="email" type="email" class='userInput' value=""
+					required placeholder="example@email.com"/>
+					<span id="email-invalid" style="visibility:hidden">
+					Must be a valid email address</span>
+				</fieldset>
+
+				<fieldset class="inputGroup">
+					<label for="dateTime" class='inputLabel' >Date and Time: </label><br/>
+					<input type="text" id="dateTime" name="dateTime" placeholder="4/15/2016  2:00pm" class='userInput' />
+				</fieldset>
+
+				<fieldset class="inputGroup">
+					<label for="appointmentType" class='inputLabel'>Appointment Type: </label><br/>
+					<select id='appointmentType' name="appointmentType" class='userInput'>
+						<option value="Massage">Massage</option>
+						<option value="Leadership Coaching">Leadership Coaching</option>
+						<option value="Core Energetics Session">Core Energetics Session</option>
+					</select>
+				</fieldset>
+
+				<fieldset class="inputGroup">
+					<label for="length" class='inputLabel'>Length: </label><br/>
+					<select id='length' name="length" class='userInput'>
+						<option value="1 hour">1 Hour</option>
+						<option value="1.5 hour">1.5 Hours</option>
+					</select>
+				</fieldset>
+
+				<button type="submit" value="Submit" class='submitInput' >Submit</button>
+
+			</form>
 
 			<br><br>
 		</div>

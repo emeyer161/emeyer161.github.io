@@ -23,10 +23,6 @@ html, body {
 		font-weight: bolder;
 		font-size: 35px;
 	}
-	/*h2::first-letter {
-		font-size: 150%;
-		font-weight: 100;
-	}*/
 	h3 {
 		color:black;
 		font-family: 'Times', Helvetica;
@@ -97,12 +93,14 @@ nav {
 		nav ul li:hover {
 			background: #FFCDA2;
 			opacity:1;
+			border-radius: 30px;
 		}
 		nav ul li:hover a {
 			color: #000000;
 		}
 		nav ul li a {
-			display: inline-block; padding: 10px 30px;
+			display: inline-block; 
+			padding: 10px 30px;
 			font-family: 'times', Helvetica;
 			font-size: 20px;
 			font-weight: lighter;
@@ -113,17 +111,26 @@ nav {
 		}
 
 	nav ul ul {
+		background-color:rgba(255,255,255,1);
 		background: linear-gradient(left, rgba(255,255,255,1) 10%,rgba(255,255,255,0) 90%);
 		background: -moz-linear-gradient(left, rgba(255,255,255,1) 10%,rgba(255,255,255,0) 90%);
 		background: -webkit-linear-gradient(left, rgba(255,255,255,1) 10%,rgba(255,255,255,0) 90%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(left, rgba(255,255,255,1) 10%,rgba(255,255,255,0) 90%);
 		display: none;
-		border-radius: 0px; padding: 0; border: 0px;
-		position: absolute; left: 100%;
+		border-radius:0;
+		border-bottom-right-radius: 30px;
+		border-top-right-radius: 30px;
+		padding: 0;
+		border: 0px;
+		position: absolute;
+		left: 100%;
 	}
 		nav ul ul li:hover{
+			background-color:rgba(255,255,255,1);
 			background: -webkit-linear-gradient(left, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%);
 			background: -o-linear-gradient(left, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%);
-			background: linear-gradient(to right, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%); /* Chrome10+,Safari5.1+ */
+			background: linear-gradient(left, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%); /* Chrome10+,Safari5.1+ */
+			background: -o-linear-gradient(left, rgba(255,255,255,1) 10%, rgba(255,255,255,0) 90%);
 		}
 
 .header{
@@ -232,6 +239,38 @@ nav {
 	bottom:0px;
 	overflow: auto;
 }
+
+#appointmentForm{
+	margin:auto;
+	width:450px;
+	padding:10px;
+	background-color:#E6B88A;
+	opacity:.9;
+	border:1px solid black;
+	border-radius:12px;
+	color:black;
+}
+	.inputGroup{
+		border:none;
+	}
+		.inputLabel{
+			font-size:20px;
+		}
+		.userInput{
+			height:30px;
+		    width:250px;
+		    margin-top:8px;
+		    border:1px solid black;
+		    border-radius:12px;
+		    text-align:center;
+		    background-color:white;
+		    font-size:13px;
+		    font-weight:600;
+		}
+		#email{
+			position:relative;
+			left:17%;
+		}
 
 .footer {
 	z-index: 3;
