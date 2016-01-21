@@ -52,7 +52,9 @@
 
 				<li><a href="pricing-and-fees.html">Pricing and Fees</a></li>
 
-				<li><a href="contact.html">Contact</a></li>
+				<li><a href="request-appointment.html">Request Appointment</a></li>
+
+				<li><a href="contact.html">Contact and Directions</a></li>
 			</ul>
 		</nav>
 
@@ -70,21 +72,22 @@
 
 				<fieldset class="inputGroup">
 					<label for="email" class='inputLabel'><b>Your</b> Email Address:</label><br/>
-					<input id="email" name="email" type="email" class='userInput' value=""
+					<input id="emailInput" name="email" type="email" class='userInput' value=""
 					required placeholder="example@email.com"/>
 					<span id="email-invalid" style="visibility:hidden">
 					Must be a valid email address</span>
 				</fieldset>
 
 				<fieldset class="inputGroup">
-					<label for="dateTime" class='inputLabel' >Date and Time: </label><br/>
+					<label for="dateTime" class='inputLabel' >Requested Date and Time: </label><br/>
 					<input type="text" id="dateTime" name="dateTime" placeholder="4/15/2016  2:00pm" class='userInput' />
 				</fieldset>
 
 				<fieldset class="inputGroup">
 					<label for="appointmentType" class='inputLabel'>Appointment Type: </label><br/>
 					<select id='appointmentType' name="appointmentType" class='userInput'>
-						<option value="Massage">Massage</option>
+						<option value="Massage">Massage Therapy</option>
+						<option value="Wellness Coaching">Wellness Coaching</option>
 						<option value="Leadership Coaching">Leadership Coaching</option>
 						<option value="Core Energetics Session">Core Energetics Session</option>
 					</select>
@@ -98,7 +101,7 @@
 					</select>
 				</fieldset>
 
-				<button type="submit" value="Submit" class='submitInput' >Submit</button>
+				<button type="submit" value="Submit" id='submitInput' >Submit</button>
 
 			</form>
 

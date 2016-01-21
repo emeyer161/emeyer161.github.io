@@ -93,7 +93,6 @@ nav {
 		nav ul li:hover {
 			background: #FFCDA2;
 			opacity:1;
-			border-radius: 30px;
 		}
 		nav ul li:hover a {
 			color: #000000;
@@ -186,6 +185,11 @@ nav {
 		.slogan h2{
 			font-size: 38px;
 		}
+	@media (max-width: 735px) {
+		.slogan {
+	    	display:none;
+		}
+	}
 
 .content{
 	z-index: 1;
@@ -240,6 +244,23 @@ nav {
 	overflow: auto;
 }
 
+#address{
+	display:inline-block;
+	float:left;
+}
+#map{
+	display:inline-block;
+	float:right;
+}
+
+@media (max-width: 1135px) {
+    #address, #map {
+    	display:block;
+		float:none;
+		margin:auto;
+	}
+}
+
 #appointmentForm{
 	margin:auto;
 	width:450px;
@@ -267,9 +288,20 @@ nav {
 		    font-size:13px;
 		    font-weight:600;
 		}
-		#email{
+		#emailInput{
 			position:relative;
 			left:17%;
+		}
+		#submitInput{
+			height:30px;
+		    width:120px;
+		    margin-top:8px;
+		    border:1px solid black;
+		    border-radius:12px;
+		    text-align:center;
+		    background-color:white;
+		    font-size:13px;
+		    font-weight:600;
 		}
 
 .footer {
