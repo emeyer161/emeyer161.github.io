@@ -12,7 +12,7 @@ gulp.task('browserify', function () {		// browserify should have a .babelrc type
         .transform(babelify)
         .bundle()
         .on("error", function (err) { console.log("Error: " + err.message); })
-        .pipe(source('application.min.js')) //'application.' + Date.now() + '.min.js'
+        .pipe(source('./js/application.js')) //'application.' + Date.now() + '.min.js'
         .pipe(gulp.dest('dist'));
 });
 

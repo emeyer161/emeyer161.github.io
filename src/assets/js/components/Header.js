@@ -106,7 +106,7 @@ class Header extends React.Component {
 
                     <div style={styles.logo}>
                         <a href='/#'>
-                            <img src='../../img/logo.png' style={styles.icon}/>
+                            <img src='../img/logo.png' style={styles.icon}/>
                             <h1 style={styles.title}>ericMeyer</h1>
                         </a>
                     </div>
