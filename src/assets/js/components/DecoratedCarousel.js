@@ -67,10 +67,9 @@ class DecoratedCarousel extends Carousel2 {
                     <div style={this.styles.pagination} id="pagination">
                     {this.slides.map(function(slideReference,i){
                         return <span key={i} onClick={function(){this.goTo(i)}.bind(this)} 
-                            style={i==this.state.currentSlide
-                                ?[this.styles.pageDot,{color:'red'}]
-                                :this.styles.pageDot}
-                            >&middot;</span>;
+                                style={i==this.state.currentSlide   ? [this.styles.pageDot,{color:'red'}]   : this.styles.pageDot}>
+                                    .
+                                </span>;
                     }.bind(this))}
                     </div>
                 </div>;

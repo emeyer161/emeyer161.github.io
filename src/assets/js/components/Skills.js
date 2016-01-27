@@ -79,23 +79,23 @@ class Skills extends React.Component {
                         <div style={styles.categoryBox} onMouseOver={function(){this._mouseOver(1)}.bind(this)} onMouseLeave={function(){this._mouseOver(0)}.bind(this)}>
                             <div style={[this.state.hoverPane!=1 && {display:'none'}, styles.categoryInfo]}>
                                 <h1 style={styles.categoryTitle}>Design & Style</h1>
-                                <img src='../../img/devPipeline/logos/html.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/css.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/photoshop.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/sketch.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/html.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/css.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/photoshop.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/sketch.png' style={styles.logo} />
                             </div>
-                            <img src='../../img/devPipeline/design.png' style={[ this.state.hoverPane==1 && styles.imgDim, styles.img ]} key='1' />
+                            <img src='./dist/img/devPipeline/design.png' style={[ this.state.hoverPane==1 && styles.imgDim, styles.img ]} key='1' />
                         </div>
                         
                         <div style={styles.categoryBox} onMouseOver={function(){this._mouseOver(2)}.bind(this)} onMouseLeave={function(){this._mouseOver(0)}.bind(this)}>
                             <div style={[this.state.hoverPane!=2 && {display:'none'}, styles.categoryInfo]}>
                                 <h1 style={styles.categoryTitle}>Interactive UI</h1>
-                                <img src='../../img/devPipeline/logos/javascript.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/jquery.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/react.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/flux.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/javascript.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/jquery.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/react.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/flux.png' style={styles.logo} />
                             </div>
-                            <img src='../../img/devPipeline/gears.png' style={[ this.state.hoverPane==2 && styles.imgDim, styles.img ]} key='2' />
+                            <img src='./dist/img/devPipeline/gears.png' style={[ this.state.hoverPane==2 && styles.imgDim, styles.img ]} key='2' />
                         </div>
                     </div>
                     
@@ -104,19 +104,19 @@ class Skills extends React.Component {
                         <div style={styles.categoryBox} onMouseOver={function(){this._mouseOver(3)}.bind(this)} onMouseLeave={function(){this._mouseOver(0)}.bind(this)}>
                             <div style={[this.state.hoverPane!=3 && {display:'none'}, styles.categoryInfo]}>
                                 <h1 style={styles.categoryTitle}>Server Logic</h1>
-                                <img src='../../img/devPipeline/logos/node.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/express.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/php.png' style={styles.logo} />
-                                <img src='../../img/devPipeline/logos/laravel.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/node.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/express.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/php.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/laravel.png' style={styles.logo} />
                             </div>
-                            <img src='../../img/devPipeline/server.png' style={[ this.state.hoverPane==3 && styles.imgDim, styles.img ]} key='3' />
+                            <img src='./dist/img/devPipeline/server.png' style={[ this.state.hoverPane==3 && styles.imgDim, styles.img ]} key='3' />
                         </div>
                         
                         <div style={styles.categoryBox} onMouseOver={function(){this._mouseOver(4)}.bind(this)} onMouseLeave={function(){this._mouseOver(0)}.bind(this)}>
                             <div style={[this.state.hoverPane!=4 && {display:'none'}, styles.categoryInfo]}>
                                 <h1 style={styles.categoryTitle}>Database Layer</h1>
                             </div>
-                            <img src='../../img/devPipeline/db.png' style={[ this.state.hoverPane==4 && styles.imgDim, styles.img ]} key='4' />
+                            <img src='./dist/img/devPipeline/db.png' style={[ this.state.hoverPane==4 && styles.imgDim, styles.img ]} key='4' />
                         </div>
                     </div>
 

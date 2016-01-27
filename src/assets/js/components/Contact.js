@@ -5,7 +5,7 @@ import InfoCard from './InfoCard';
 let styles={
    main:{
       height:'600px',
-      backgroundImage:'url(../../img/zionPath.jpg)',
+      backgroundImage:'url(./dist/img/zionPath.jpg)',
       backgroundAttachment:'fixed',
       backgroundSize:'cover',
       backgroundPosition:'90% 0%',

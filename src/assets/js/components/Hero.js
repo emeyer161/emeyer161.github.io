@@ -3,7 +3,7 @@ import React from 'react';
 let styles = {
   main:{
     height: window.innerHeight,
-    background: 'linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6) ), url(../../img/workspaceBlurred.jpg)',
+    background: 'linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.6) ), url(./dist/img/workspaceBlurred.jpg)',
     backgroundAttachment:'fixed',
     backgroundPosition:'50% 65%',
     backgroundSize:'cover',

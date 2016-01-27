@@ -20,7 +20,7 @@ let styles={
 class InfoCard extends React.Component {
   render(){
     return  <div style={[styles.main, this.props.position]}>
-                <img style={styles.img} src='./img/grad.png' />
+                <img style={styles.img} src='./dist/img/grad.png' />
             </div>;
   };
 }
