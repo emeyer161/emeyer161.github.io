@@ -37,7 +37,8 @@ let styles = {
     categoryTitle:{
         fontFamily:'verdana',
         color:'#414142',
-        marginBottom:'10%'
+        marginBottom:'10%',
+        fontSize:'26px'
     },
     img:{
         width:'100%'
@@ -104,10 +105,10 @@ class Skills extends React.Component {
                         <div style={styles.categoryBox} onMouseOver={function(){this._mouseOver(3)}.bind(this)} onMouseLeave={function(){this._mouseOver(0)}.bind(this)}>
                             <div style={[this.state.hoverPane!=3 && {display:'none'}, styles.categoryInfo]}>
                                 <h1 style={styles.categoryTitle}>Server Logic</h1>
-                                <img src='./dist/img/devPipeline/logos/node.png' style={styles.logo} />
-                                <img src='./dist/img/devPipeline/logos/express.png' style={styles.logo} />
                                 <img src='./dist/img/devPipeline/logos/php.png' style={styles.logo} />
                                 <img src='./dist/img/devPipeline/logos/laravel.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/node.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/express.png' style={styles.logo} />
                             </div>
                             <img src='./dist/img/devPipeline/server.png' style={[ this.state.hoverPane==3 && styles.imgDim, styles.img ]} key='3' />
                         </div>
@@ -115,6 +116,8 @@ class Skills extends React.Component {
                         <div style={styles.categoryBox} onMouseOver={function(){this._mouseOver(4)}.bind(this)} onMouseLeave={function(){this._mouseOver(0)}.bind(this)}>
                             <div style={[this.state.hoverPane!=4 && {display:'none'}, styles.categoryInfo]}>
                                 <h1 style={styles.categoryTitle}>Database Layer</h1>
+                                <img src='./dist/img/devPipeline/logos/mysql.png' style={styles.logo} />
+                                <img src='./dist/img/devPipeline/logos/mongodb.png' style={styles.logo} />
                             </div>
                             <img src='./dist/img/devPipeline/db.png' style={[ this.state.hoverPane==4 && styles.imgDim, styles.img ]} key='4' />
                         </div>

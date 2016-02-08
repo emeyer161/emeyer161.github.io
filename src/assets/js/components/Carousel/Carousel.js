@@ -1,21 +1,24 @@
 import React from 'react';
 import Radium from 'radium';
 
-class Carousel2 extends React.Component {
+class Carousel extends React.Component {
     constructor(props){
         super();
+
         this.state = {
-            currentSlide:0
+            currentSlide:0,
+            mouseOver:false
         };
         
         this.slides = props.slides || [];
-        this.show = props.show || 0;
+        this.show = props.show || (this.slides.length>0 ? 1 : 0);
         
         this.styles = {
             viewport:{
                 position: "relative",
-                width: props.width || "100%",
-                height: props.height || "100%",
+                width: "100%",
+                height: "100%",
+                display:'inline-block',
                 overflow: "hidden"
             },
             slideReel:{
@@ -48,6 +51,12 @@ class Carousel2 extends React.Component {
         }
     }
     
+    componentWillUnmount(){
+        if (this.incrementInterval){
+            clearInterval(this.incrementInterval);
+        }
+    }
+    
     nextSlide(){
         this.goTo(this.state.currentSlide+1);
     }
@@ -57,18 +66,15 @@ class Carousel2 extends React.Component {
     }
     
     goTo(id){
-        if (id==-1){
-            id = this.props.slides.length-1;
+        if (id<0){
+            id = this.props.slides.length+id;
         } else{
             id = id%this.props.slides.length;
         }
         this.setState({
             currentSlide:id
         });
-    }
-    
-    getCurrentSlide(){
-        return this.state.currentSlide;
+        this.props.onChange && this.props.onChange(id);
     }
     
     render(){
@@ -78,7 +84,7 @@ class Carousel2 extends React.Component {
         return  <div style={this.styles.viewport} id='viewport'>
                     <div style={this.styles.slideReel} id='slideReel' >
                         {liveSlides.map((slide, i) => {
-                            return  <div key={i} style={this.styles.slide} id='slide' onClick={function(){this.goTo(i-1)}.bind(this)} >
+                            return  <div key={i} style={this.styles.slide} id='slide' onClick={function(){this.goTo(i-Math.floor(this.show/2))}.bind(this)} >
                                         <img src={slide.src} style={this.styles.img} id='img' />
                                     </div>;
                         })}
@@ -87,4 +93,4 @@ class Carousel2 extends React.Component {
     }
 }
 
-export default Radium(Carousel2);
+export default Radium(Carousel);
