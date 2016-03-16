@@ -26,13 +26,20 @@ let styles = {
     fontFamily:'verdana',
     fontWeight:'300',
     '@media (max-width: 850px)': {
+        padding:'15px',
+        border:'3px solid white',
         width:'550px',
         fontSize: '22px'
     },
     '@media (max-width: 600px)': {
-        width:'350px',
-        fontSize: '15px'
+        padding:'10px 1.5%',
+        border:'3px solid white',
+        width:'95%',
+        fontSize: '4vw'
     },
+    text:{
+        fontSize:'inherit'
+    }
   }
 };
 
@@ -40,7 +47,7 @@ class Hero extends React.Component {
   render(){
     return  <section id='hero' style={styles.main}>
               <div style={styles.box}>
-                <h2>{'function{ WebDeveloper }'}</h2>
+                <h2 style={styles.text}>{'function{ WebDeveloper }'}</h2>
               </div>
             </section>;
   };

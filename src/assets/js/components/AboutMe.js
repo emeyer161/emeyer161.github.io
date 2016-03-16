@@ -1,16 +1,25 @@
 import React from 'react';
+import Radium from 'radium';
 
 let styles = {
-  main:{
-    height:'400px',
-    borderTop:'4px solid rgba(173, 128, 108,1)',
-    borderBottom:'4px solid rgba(173, 128, 108,1)',
-    backgroundColor:'white',
-    textAlign:'center'
-  },
+    main:{
+        width:'inherit',
+        padding:'50px 18%',
+        borderTop:'4px solid rgba(173, 128, 108,1)',
+        borderBottom:'4px solid rgba(173, 128, 108,1)',
+        backgroundColor:'white',
+        color:'#414142',
+        textAlign:'center',
+        fontSize:'25px',
+        fontFamily:'georgia',
+        lineHeight:'1.4',
+        '@media (max-width: 600px)': {
+            fontSize: '4vw'
+        },
+    },
     link:{
         position: 'relative',
-        top: '-69px',
+        top: '-119px',
         opacity: '0'
     }
 };
@@ -18,10 +27,10 @@ let styles = {
 class AboutMe extends React.Component {
   render(){
     return  <div id="aboutMe" style={styles.main}>
-              <span id='aboutLink' style={styles.link}>&nbsp;</span>
-              <h1>What I've Written:</h1>
+                <span id='aboutLink' style={styles.link}>&nbsp;</span>
+                I'm from Upstate NY, and concentrated in Neuroscience at the University of Maryland. That experience drove me to improve how people interact with technology, and each other through technology. I've always drawn to design and build tools that enrich peoples lives. I began studying web development comprehensively, and found a way to put my experience and motivation to work, for you.
             </div>;
   };
 }
 
-export default AboutMe;
+export default Radium(AboutMe);

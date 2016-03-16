@@ -1,6 +1,7 @@
 import React from 'react';
+import Radium from 'radium';
+import ContactInfo from './ContactInfo';
 import ContactForm from './ContactForm';
-import InfoCard from './InfoCard';
 
 let styles={
     main:{
@@ -11,17 +12,36 @@ let styles={
         textAlign:'center',
         padding:'50px 0'
     },
-    infoCard:{
-        verticalAlign:'top',
+    contactBox:{
+        width:'60%',
+        margin:'auto',
+        background:'rgba(100,100,100,.8)',
+        borderRadius:'5px',
+        '@media (max-width: 1200px)': {
+            width:'72%',
+        },
+        '@media (max-width: 900px)': {
+            width:'85%',
+        },
+        '@media (max-width: 600px)': {
+            width:'98%',
+        },
+    },
+    contactInfo:{
         display:'inline-block',
-        margin:'0 calc((100% - 800px)/3) 0 0',
-        '@media (max-width: 805px)':{
-            margin:'0 0 50px 0'
+        width:'30%',
+        '@media (max-width: 450px)': {
+            width:'95%',
+            margin:'2.5%'
         },
     },
     contactForm:{
-        verticalAlign:'top',
         display:'inline-block',
+        width:'70%',
+        '@media (max-width: 450px)': {
+            width:'95%',
+            margin:'2.5%'
+        },
     },
     link:{
         position: 'relative',
@@ -33,11 +53,13 @@ let styles={
 class Contact extends React.Component {
   render(){
     return  <section id='contact' style={styles.main}>
-                <span id='servicesLink' style={styles.link}>&nbsp;</span>
-                <InfoCard position={styles.infoCard} />
-                <ContactForm position={styles.contactForm} />
+                <span id='contactLink' style={styles.link}>&nbsp;</span>
+                <div style={styles.contactBox} id='contactBox' >
+                    <ContactInfo position={styles.contactInfo} />
+                    <ContactForm position={styles.contactForm} />
+                </div>
             </section>;
   };
 }
 
-export default Contact;
+export default Radium(Contact);

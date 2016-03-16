@@ -9,6 +9,12 @@ import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
+let styles = {
+    app:{
+        fontFamily: 'Verdana'
+    }
+}
+
 class Application extends React.Component {
     constructor(){
         super();
@@ -26,7 +32,7 @@ class Application extends React.Component {
     }
 
   	render(){
-	    return  <div>
+	    return  <div style={styles.app}>
                     <Header large={this.state.large} />
                     <Hero />
                     <Services />
