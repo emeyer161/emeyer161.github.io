@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 
 let styles = {
   main:{
@@ -23,7 +24,15 @@ let styles = {
     color:'white',
     fontSize:'30px',
     fontFamily:'verdana',
-    fontWeight:'300'
+    fontWeight:'300',
+    '@media (max-width: 850px)': {
+        width:'550px',
+        fontSize: '22px'
+    },
+    '@media (max-width: 600px)': {
+        width:'350px',
+        fontSize: '15px'
+    },
   }
 };
 
@@ -37,4 +46,4 @@ class Hero extends React.Component {
   };
 }
 
-export default Hero;
+export default Radium(Hero);

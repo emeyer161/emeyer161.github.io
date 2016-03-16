@@ -10,7 +10,8 @@ let styles = {
         top: '0px',
         left: '0px',
         right: '20px',
-        fontFamily:'verdana'
+        fontFamily:'verdana',
+        textAlign:'center',
     },
     mainBackground:{
         backgroundColor:'rgba(173, 128, 108, .9)'
@@ -104,19 +105,19 @@ class Header extends React.Component {
     render(){
         return  <section id='header' style={[ this.state.bgOn ? styles.mainBackground : null, styles.main ]}>
 
-                    <div style={styles.logo}>
+                    <div style={[ styles.logo, !this.props.large && {position:'static'} ]}>
                         <a href='/#'>
                             <img src='./dist/img/logo.png' style={styles.icon}/>
                             <h1 style={styles.title}>ericMeyer</h1>
                         </a>
                     </div>
 
-                    <ul style={styles.nav}>
-                        <a href='/#/' style={styles.navLink} key='about'><li style={styles.navLi}>What I Offer</li></a>
-                        <a href='/#/' style={styles.navLink} key='portfolio'><li style={styles.navLi}>What I've Done</li></a>
-                        <a href='/#/' style={styles.navLink} key='blog'><li style={styles.navLi}>Who I Am</li></a>
-                        <a href='./#contact' style={styles.navLink} key='contact'><li style={styles.navLi}>Get In Touch</li></a>
-                    </ul>
+                    {this.props.large && <ul style={styles.nav}>
+                        <a href='#servicesLink' style={styles.navLink} key='services'><li style={styles.navLi}>What I Offer</li></a>
+                        <a href='#featuredLink' style={styles.navLink} key='portfolio'><li style={styles.navLi}>What I've Done</li></a>
+                        <a href='#aboutLink' style={styles.navLink} key='blog'><li style={styles.navLi}>Who I Am</li></a>
+                        <a href='#contactLink' style={styles.navLink} key='contact'><li style={styles.navLi}>Get In Touch</li></a>
+                    </ul>}
 
                 </section>;
     };

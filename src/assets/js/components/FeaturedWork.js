@@ -20,11 +20,10 @@ let styles = {
         display:'inline-block',
         dotColor:'#ad806c'
     },
-    slideInfo:{
-        width:'50%',
-        height:'300px',
-        display:'inline-block',
-        verticalAlign:'top'
+    link:{
+        position: 'relative',
+        top: '-109px',
+        opacity: '0'
     }
 };
 
@@ -42,9 +41,10 @@ class FeaturedWork extends React.Component {
     }
 
     render(){
-        return  <div style={styles.main}>
+        return  <div id="featuredWork" style={styles.main}>
+                    <span id='featuredLink' style={styles.link}>&nbsp;</span>
                     <h1 style={styles.title}>Featured Work</h1>
-                    <DecoratedCarousel slides={this.state.slides} show={1} delay={4} pagination={true} buttons={true} displayInfo={'right'} style={styles.carousel}  />
+                    <DecoratedCarousel slides={this.state.slides} show={1} delay={4} pagination={true} buttons={true} displayInfo={this.props.large ? 'right' : 'below'} style={styles.carousel}  />
                 </div>;
     };
 }

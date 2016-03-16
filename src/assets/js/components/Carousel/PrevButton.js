@@ -1,23 +1,8 @@
 import React from 'react';
-import Radium from 'radium';
-
-let styles = {
-  main:{
-    backgroundColor:'white',
-    textAlign:'center',
-    fontSize:'30px',
-    color:'black',
-    border:'none',
-    ':hover':{
-      boxShadow:'0px 0px 3px 3px white'
-    }
-  }
-};
 
 class PrevButton extends React.Component {
   render(){
-    var propStyles = this.props.style || {};
-    return  <button key='prevButton' style={[styles.main,propStyles]} id='prevButton' onClick={this._handleClick.bind(this)}> {'<'} </button>;
+    return  <img src='./dist/img/arrowLeft.png' key='prevButton' style={this.props.style} id='prevButton' onClick={this._handleClick.bind(this)} />;
   };
   
   _handleClick(){
@@ -25,4 +10,4 @@ class PrevButton extends React.Component {
   }
 }
 
-export default Radium(PrevButton);
+export default PrevButton;
