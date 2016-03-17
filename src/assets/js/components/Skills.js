@@ -19,7 +19,7 @@ let styles = {
     },
     containerTitle:{
         color:'#414142',
-        fontSize:'30px',
+        fontSize:'1.8rem',
         fontFamily:'verdana',
     },
     categoryBox:{
@@ -38,7 +38,7 @@ let styles = {
         fontFamily:'verdana',
         color:'#414142',
         marginBottom:'10%',
-        fontSize:'26px'
+        fontSize:'1.4rem'
     },
     img:{
         width:'100%'

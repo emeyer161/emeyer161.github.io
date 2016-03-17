@@ -17,11 +17,12 @@ class DecoratedCarousel extends Carousel {
             },
             title:{
                 fontFamily:'verdana',
-                fontSize:'30px'
+                fontSize:'1.4rem'
             },
             body:{
                 fontFamily:'georgia',
-                fontSize:'20px'
+                lineHeight:'1.5',
+                fontSize:'1.2rem'
             },
             buttonDiv:{
                 position:'relative',
@@ -50,7 +51,7 @@ class DecoratedCarousel extends Carousel {
             pageDot:{
                 display:'inline-block',
                 margin:'0 10px',
-                fontSize: '60px',
+                fontSize: '3rem',
                 color:'white',
                 textShadow:'0px 0px 3px black'
             }

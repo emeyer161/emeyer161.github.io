@@ -9,7 +9,7 @@ let styles = {
         backgroundColor:'white',
         color:'#414142',
         textAlign:'center',
-        fontSize:'25px',
+        fontSize:'1.3rem',
         fontFamily:'georgia',
         lineHeight:'1.4',
         '@media (max-width: 600px)': {

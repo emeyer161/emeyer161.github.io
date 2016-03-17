@@ -8,6 +8,9 @@ let styles = {
     backgroundAttachment:'fixed',
     backgroundPosition:'50% 65%',
     backgroundSize:'cover',
+    WebkitBackgroundSize: 'cover',
+    MozBackgroundSize: 'cover',
+    OBackgroundSize: 'cover',
     color:'#004d00',
     textAlign:'center'
   },
@@ -16,26 +19,29 @@ let styles = {
     top:'50%',
     transform:'translateY(-50%)',
     margin:'auto',
+    boxSizing:'border-box',
     padding:'20px',
     width:'700px',
     opacity:'.9',
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     border:'4px solid white',
     color:'white',
-    fontSize:'30px',
+    fontSize:'1.4rem',
     fontFamily:'verdana',
     fontWeight:'300',
-    '@media (max-width: 850px)': {
+    '@media (max-width: 900px)': {
         padding:'15px',
         border:'3px solid white',
-        width:'550px',
-        fontSize: '22px'
+        width:'600px',
+        fontSize:'1.2rem',
     },
-    '@media (max-width: 600px)': {
-        padding:'10px 1.5%',
-        border:'3px solid white',
+    '@media (max-width: 700px)': {
+        padding:'13px',
+        width:'500px',
+    },
+    '@media (max-width: 500px)': {
+        padding:'11px',
         width:'95%',
-        fontSize: '4vw'
     },
     text:{
         fontSize:'inherit'

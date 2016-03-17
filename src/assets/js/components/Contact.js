@@ -13,32 +13,34 @@ let styles={
         padding:'50px 0'
     },
     contactBox:{
-        width:'60%',
+        width:'65%',
         margin:'auto',
+        boxSizing:'borderBox',
+        padding:'3px',
         background:'rgba(100,100,100,.8)',
         borderRadius:'5px',
         '@media (max-width: 1200px)': {
-            width:'72%',
+            width:'75%',
         },
         '@media (max-width: 900px)': {
             width:'85%',
         },
         '@media (max-width: 600px)': {
-            width:'98%',
+            width:'95%',
         },
     },
     contactInfo:{
         display:'inline-block',
-        width:'30%',
-        '@media (max-width: 450px)': {
+        width:'35%',
+        '@media (max-width: 550px)': {
             width:'95%',
             margin:'2.5%'
         },
     },
     contactForm:{
         display:'inline-block',
-        width:'70%',
-        '@media (max-width: 450px)': {
+        width:'65%',
+        '@media (max-width: 550px)': {
             width:'95%',
             margin:'2.5%'
         },
@@ -55,7 +57,7 @@ class Contact extends React.Component {
     return  <section id='contact' style={styles.main}>
                 <span id='contactLink' style={styles.link}>&nbsp;</span>
                 <div style={styles.contactBox} id='contactBox' >
-                    <ContactInfo position={styles.contactInfo} />
+                    <ContactInfo position={styles.contactInfo} large={this.props.large} />
                     <ContactForm position={styles.contactForm} />
                 </div>
             </section>;

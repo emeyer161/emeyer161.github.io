@@ -3,16 +3,15 @@ import DecoratedCarousel from './Carousel/DecoratedCarousel';
 
 let styles = {
     main:{
-        // height:'700px',
-        padding:'40px 0',
+        padding:'2% 0',
         backgroundColor:'rgba(0, 0, 0,.9)',
         color:'white',
         textAlign:'center'
     },
     title:{
         fontFamily:'verdana',
-        fontSize:'40px',
-        margin:'0 0 40px 0'
+        fontSize:'1.8rem',
+        margin:'0 0 2% 0'
     },
     carousel:{
         width:'100%',

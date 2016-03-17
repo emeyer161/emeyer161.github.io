@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Radium from 'radium';
 
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -9,13 +10,7 @@ import AboutMe from './components/AboutMe';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 
-let styles = {
-    app:{
-        fontFamily: 'Verdana'
-    }
-}
-
-class Application extends React.Component {
+export default class Application extends React.Component {
     constructor(){
         super();
         this.state = {
@@ -32,13 +27,13 @@ class Application extends React.Component {
     }
 
   	render(){
-	    return  <div style={styles.app}>
+	    return  <div>
                     <Header large={this.state.large} />
                     <Hero />
                     <Services />
                     <FeaturedWork large={this.state.large} />
                     <AboutMe />
-                    <Contact />
+                    <Contact large={this.state.large} />
                     <Footer />
 	            </div>;
   	};

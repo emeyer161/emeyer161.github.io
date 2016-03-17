@@ -49,7 +49,6 @@ let styles = {
     },
     navLink:{
         height:'100%',
-        // width:'100px',
         display:'inline-block',
         margin:'0 10px',
         padding: '1px 5px',
@@ -69,7 +68,8 @@ let styles = {
         transform:'translateY(-50%)',
         width:'100%',
         textAlign:'center',
-        color:'inherit'
+        color:'inherit',
+        fontSize:'.8rem'
     }
 };
 
