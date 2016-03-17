@@ -10,23 +10,23 @@ let styles={
         backgroundSize:'cover',
         backgroundPosition:'90% 0%',
         textAlign:'center',
-        padding:'50px 0'
+        padding:'2% 0'
     },
     contactBox:{
         width:'65%',
         margin:'auto',
         boxSizing:'borderBox',
-        padding:'3px',
+        padding:'2px',
         background:'rgba(100,100,100,.8)',
         borderRadius:'5px',
-        '@media (max-width: 1200px)': {
-            width:'75%',
+        '@media (max-width: 1250px)': {
+            width:'76%',
         },
-        '@media (max-width: 900px)': {
-            width:'85%',
+        '@media (max-width: 950px)': {
+            width:'87%',
         },
-        '@media (max-width: 600px)': {
-            width:'95%',
+        '@media (max-width: 650px)': {
+            width:'98%',
         },
     },
     contactInfo:{

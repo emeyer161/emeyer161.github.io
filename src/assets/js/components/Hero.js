@@ -30,18 +30,20 @@ let styles = {
     fontFamily:'verdana',
     fontWeight:'300',
     '@media (max-width: 900px)': {
-        padding:'15px',
+        padding:'14px',
         border:'3px solid white',
-        width:'600px',
-        fontSize:'1.2rem',
+        width:'650px',
+        fontSize:'1.3rem',
     },
     '@media (max-width: 700px)': {
-        padding:'13px',
+        padding:'12px',
         width:'500px',
+        fontSize:'1.2rem',
     },
     '@media (max-width: 500px)': {
-        padding:'11px',
+        padding:'10px',
         width:'95%',
+        fontSize:'1.1rem',
     },
     text:{
         fontSize:'inherit'

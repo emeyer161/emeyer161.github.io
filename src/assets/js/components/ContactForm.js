@@ -33,7 +33,7 @@ let styles={
     submit:{
         background:'#ad806c',
         color:'white',
-        fontSize: '18px',
+        fontSize: '1.1rem',
         fontWeight: '600',
     }
 };

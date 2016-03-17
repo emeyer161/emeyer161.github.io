@@ -18,21 +18,24 @@ let styles={
         margin:'1%',
         padding:'4px',
         borderRadius:'5px',
-        fontSize: '1rem',
+        fontSize: '.9rem',
         fontWeight: '500',
         textAlign:'left',
         background:'#ad806c',
         color:'white',
     },
     topBox:{
-        width:'98%'
+        width:'98%',
+        '@media (max-width: 550px)': {
+            width:'31%',
+        },
     },
     bottomBox:{
         width:'48%',
-        '@media (max-width: 1000px)': {
+        '@media (max-width: 1100px)': {
             width:'98%',
         },
-        '@media (max-width: 450px)': {
+        '@media (max-width: 550px)': {
             width:'31%',
         },
     },
@@ -43,7 +46,7 @@ let styles={
     text:{
         display:'inline-block',
         marginLeft:'1%',
-        verticalAlign:'30%'
+        verticalAlign:'40%'
     },
     a:{},
 };
@@ -56,13 +59,13 @@ class ContactInfo extends React.Component {
                 <a href="tel:518-605-0013">
                     <div style={[styles.textBox, styles.topBox]}>
                         <img src='./dist/img/contact/phoneLogo.png' style={styles.icon} />
-                        <div style={styles.text}>+1 (518) 605-0013</div>
+                        <div style={styles.text}>{window.innerWidth>1000 ? "+1 (518) 605-0013" : "Call Me"}</div>
                     </div>
                 </a>
                 <a href='mailto:meyer.ej@gmail.com?Subject=Web%20Development%20Inquiry'>
                     <div style={[styles.textBox, styles.topBox]}>
                         <img src='./dist/img/contact/emailLogo.png' style={styles.icon} />
-                        <div style={styles.text}>meyer.ej@gmail.com</div>
+                        <div style={styles.text}>{window.innerWidth>1000 ? "meyer.ej@gmail.com" : "Email Me"}</div>
                     </div>
                 </a>
                 <a href='skype:emeyer161?call'>
