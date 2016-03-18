@@ -31,10 +31,17 @@ let styles={
         padding:'2.5%'
     },
     submit:{
-        background:'#ad806c',
         color:'white',
         fontSize: '1.1rem',
         fontWeight: '600',
+        backgroundColor:'#ad806c',
+        border:'1px solid #ad806c',
+        color:'white',
+        cursor:'pointer',
+        ':hover': {
+            border:'1px solid white',
+            backgroundColor: '#cfa28e',
+        }
     }
 };
 

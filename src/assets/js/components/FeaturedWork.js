@@ -31,10 +31,11 @@ class FeaturedWork extends React.Component {
         super();
         this.state = {
             slides: [
-                { id: 0, title: 'The Riverstone Center', body: 'A small business massage studio website offering information on services provided.', src: './dist/img/theRiverstoneCenter.png' },
-                { id: 1, title: 'Middle Cities', body: 'A quiz app testing knowledge of city population data.', src: './dist/img/middleCitiesLogo.png' },
-                { id: 2, title: 'Checkingtons Listables', body: 'A simple but functional shopping checklist app', src: './dist/img/checkingtonsListablesLogo.png' },
-                { id: 3, title: '#Guess', body: 'A quiz app implementing the Instagram API', src: './dist/img/guessLogo.png' },
+                { id: 0, title: 'The Thirsty Terp', body: 'A college sports and news blog for the University of Maryland.', src: './dist/img/tttLogo.png' },
+                { id: 1, title: 'The Riverstone Center', body: 'A small business massage studio website offering information on services provided.', src: './dist/img/theRiverstoneCenter.png' },
+                { id: 2, title: 'Middle Cities', body: 'A quiz app testing knowledge of city population data.', src: './dist/img/middleCitiesLogo.png' },
+                { id: 3, title: 'Checkingtons Listables', body: 'A simple but functional shopping checklist app', src: './dist/img/checkingtonsListablesLogo.png' },
+                { id: 4, title: '#Guess', body: 'A quiz app implementing the Instagram API', src: './dist/img/guessLogo.png' },
             ]
         };
     }
