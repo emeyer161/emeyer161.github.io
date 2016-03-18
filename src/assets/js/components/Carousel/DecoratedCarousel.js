@@ -60,20 +60,71 @@ class DecoratedCarousel extends Carousel {
         for (var attrname in this.newStyles) { this.styles[attrname] = this.newStyles[attrname]; }
     }
 
+    componentDidMount(){
+        this.props.delay && this.setSlideInterval();
+
+        (('ontouchstart' in window)
+            || (navigator.MaxTouchPoints > 0)
+            || (navigator.msMaxTouchPoints > 0))
+            ? initiateTouchHandlers()
+            : null
+    }
+
+    componentWillUnmount(){
+        this.incrementInterval && this.clearSlideInterval();
+    }
+
     _mouseOver(bool){
-        if (this.props.delay){
-            if (bool){
-                clearInterval(this.incrementInterval);
-            } else {
-                this.incrementInterval = setInterval(function(){
-                    this.nextSlide();
-                }.bind(this),this.props.delay*1000);
-            }
-        }
+        this.props.delay && (bool
+                ? this.clearSlideInterval()
+                : this.setSlideInterval());
 
         this.setState({
             mouseOver:bool
         });
+    }
+
+    initiateTouchHandlers(){
+        this.touchsurface = document.getElementById('touchsurface'),
+        this.startX, this.startY, this.distX,
+        this.threshold = 150, //required min distance traveled to be considered swipe
+        this.startTime,
+        this.allowedTime = 200, // maximum time allowed to travel that distance
+        this._handleSwipe = function(direction){
+            if (direction == "left"){
+                this.nextSlide();
+            }
+            if (direction == "right"){
+                this.prevSlide();
+            }
+        }
+
+        touchsurface.addEventListener('touchstart', function(e){
+            this.startObj = e.changedTouches[0];
+            this.startX = this.startObj.pageX;
+            this.startY = this.startObj.pageY;
+            this.startTime = new Date().getTime(); // record time when finger first makes contact with surface
+            e.preventDefault();
+        }, false)
+     
+        touchsurface.addEventListener('touchmove', function(e){
+            e.preventDefault() // prevent scrolling when inside DIV
+        }, false)
+     
+        touchsurface.addEventListener('touchend', function(e){
+            this.endObj = e.changedTouches[0]
+
+            if ((new Date().getTime() - this.startTime <= this.allowedTime) &&  // check that elapsed time is within allowed
+                (this.endObj.pageX - this.startX >= this.threshold) &&    // check that swipe distance was long enough
+                (Math.abs(this.endObj.pageY - this.startY) <= 100)) {     // check that Y distance was minimal
+                    this.endObj.pageX - this.startX > 0       // calculate swipe direction
+                        ? this._handleSwipe('right')
+                        : tis._handleswipe('left')
+            }
+
+            e.preventDefault();
+        }, false)
+
     }
 
     render(){

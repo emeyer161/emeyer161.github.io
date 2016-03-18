@@ -43,18 +43,14 @@ class Carousel extends React.Component {
         };
     }
     
-    componentDidMount(){
-        if (this.props.delay){
-            this.incrementInterval = setInterval(function(){
+    setSlideInterval(){
+        this.incrementInterval = setInterval(function(){
                 this.nextSlide();
-            }.bind(this),this.props.delay*1000);
-        }
+            }.bind(this), this.props.delay*1000);
     }
     
-    componentWillUnmount(){
-        if (this.incrementInterval){
-            clearInterval(this.incrementInterval);
-        }
+    clearSlideInterval(){
+        clearInterval(this.incrementInterval);
     }
     
     nextSlide(){
@@ -66,11 +62,9 @@ class Carousel extends React.Component {
     }
     
     goTo(id){
-        if (id<0){
-            id = this.props.slides.length+id;
-        } else{
-            id = id%this.props.slides.length;
-        }
+        id<0
+            ? id = this.props.slides.length+id
+            : id = id%this.props.slides.length
         this.setState({
             currentSlide:id
         });
