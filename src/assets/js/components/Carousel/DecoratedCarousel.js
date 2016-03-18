@@ -66,8 +66,8 @@ class DecoratedCarousel extends Carousel {
         (('ontouchstart' in window)
             || (navigator.MaxTouchPoints > 0)
             || (navigator.msMaxTouchPoints > 0))
-            ? initiateTouchHandlers()
-            : null
+        ? this.initiateTouchHandlers()
+        : console.log('notouch')
     }
 
     componentWillUnmount(){
@@ -85,11 +85,11 @@ class DecoratedCarousel extends Carousel {
     }
 
     initiateTouchHandlers(){
-        this.touchsurface = document.getElementById('touchsurface'),
+        this.touchsurface = document.getElementById('decoratedCarousel'),
         this.startX, this.startY, this.distX,
-        this.threshold = 150, //required min distance traveled to be considered swipe
+        this.threshold = 100, //required min distance traveled to be considered swipe
         this.startTime,
-        this.allowedTime = 200, // maximum time allowed to travel that distance
+        this.allowedTime = 1000, // maximum time allowed to travel that distance
         this._handleSwipe = function(direction){
             if (direction == "left"){
                 this.nextSlide();
@@ -99,31 +99,31 @@ class DecoratedCarousel extends Carousel {
             }
         }
 
-        touchsurface.addEventListener('touchstart', function(e){
+        this.touchsurface.addEventListener('touchstart', function(e){
+            this._mouseOver(true);
             this.startObj = e.changedTouches[0];
             this.startX = this.startObj.pageX;
             this.startY = this.startObj.pageY;
             this.startTime = new Date().getTime(); // record time when finger first makes contact with surface
             e.preventDefault();
-        }, false)
+        }.bind(this), false)
      
-        touchsurface.addEventListener('touchmove', function(e){
+        this.touchsurface.addEventListener('touchmove', function(e){
             e.preventDefault() // prevent scrolling when inside DIV
-        }, false)
+        }.bind(this), false)
      
-        touchsurface.addEventListener('touchend', function(e){
-            this.endObj = e.changedTouches[0]
-
+        this.touchsurface.addEventListener('touchend', function(e){
+            this._mouseOver(false);
+            this.endObj = e.changedTouches[0];
             if ((new Date().getTime() - this.startTime <= this.allowedTime) &&  // check that elapsed time is within allowed
-                (this.endObj.pageX - this.startX >= this.threshold) &&    // check that swipe distance was long enough
-                (Math.abs(this.endObj.pageY - this.startY) <= 100)) {     // check that Y distance was minimal
+                (Math.abs(this.endObj.pageX - this.startX) >= this.threshold) &&    // check that swipe distance was long enough
+                (Math.abs(this.endObj.pageY - this.startY) <= 50)) {     // check that Y distance was minimal
                     this.endObj.pageX - this.startX > 0       // calculate swipe direction
                         ? this._handleSwipe('right')
-                        : tis._handleswipe('left')
+                        : this._handleSwipe('left')
             }
-
             e.preventDefault();
-        }, false)
+        }.bind(this), false)
 
     }
 
