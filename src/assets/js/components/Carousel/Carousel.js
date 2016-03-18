@@ -7,7 +7,8 @@ class Carousel extends React.Component {
 
         this.state = {
             currentSlide:0,
-            mouseOver:false
+            mouseOver:false,
+            touchEnabled: (('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0))
         };
         
         this.slides = props.slides || [];

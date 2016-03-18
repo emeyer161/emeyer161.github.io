@@ -63,11 +63,9 @@ class DecoratedCarousel extends Carousel {
     componentDidMount(){
         this.props.delay && this.setSlideInterval();
 
-        (('ontouchstart' in window)
-            || (navigator.MaxTouchPoints > 0)
-            || (navigator.msMaxTouchPoints > 0))
-        ? this.initiateTouchHandlers()
-        : console.log('notouch')
+        this.state.touchEnabled
+            ? this.initiateTouchHandlers()
+            : console.log('notouch')
     }
 
     componentWillUnmount(){
@@ -77,10 +75,10 @@ class DecoratedCarousel extends Carousel {
     _mouseOver(bool){
         this.props.delay && (bool
                 ? this.clearSlideInterval()
-                : this.setSlideInterval());
+                : this.setSlideInterval())
 
         this.setState({
-            mouseOver:bool
+            mouseOver: bool
         });
     }
 
@@ -89,7 +87,7 @@ class DecoratedCarousel extends Carousel {
         this.startX, this.startY, this.distX,
         this.threshold = 100, //required min distance traveled to be considered swipe
         this.startTime,
-        this.allowedTime = 1000, // maximum time allowed to travel that distance
+        this.allowedTime = 600, // maximum time allowed to travel that distance
         this._handleSwipe = function(direction){
             if (direction == "left"){
                 this.nextSlide();
@@ -105,11 +103,6 @@ class DecoratedCarousel extends Carousel {
             this.startX = this.startObj.pageX;
             this.startY = this.startObj.pageY;
             this.startTime = new Date().getTime(); // record time when finger first makes contact with surface
-            e.preventDefault();
-        }.bind(this), false)
-     
-        this.touchsurface.addEventListener('touchmove', function(e){
-            e.preventDefault() // prevent scrolling when inside DIV
         }.bind(this), false)
      
         this.touchsurface.addEventListener('touchend', function(e){
@@ -122,7 +115,6 @@ class DecoratedCarousel extends Carousel {
                         ? this._handleSwipe('right')
                         : this._handleSwipe('left')
             }
-            e.preventDefault();
         }.bind(this), false)
 
     }
@@ -157,7 +149,7 @@ class DecoratedCarousel extends Carousel {
                         </div>}
                     </div>
                     
-                    {(this.props.pagination) && <div style={[ this.styles.pagination, !this.state.mouseOver && {opacity:'0'} ]} id="pagination">
+                    {(this.props.pagination) && <div style={[ this.styles.pagination, (!this.state.mouseOver && !this.state.touchEnabled) && {opacity:'0'} ]} id="pagination">
                         {this.slides.map(function(slideReference,i){
                             return <p key={i} onClick={function(){this.goTo(i)}.bind(this)} 
                                     style={[this.styles.pageDot, i==this.state.currentSlide ? {color:this.props.style.dotColor || 'red'} : null]}>
@@ -166,7 +158,7 @@ class DecoratedCarousel extends Carousel {
                         }.bind(this))}
                     </div> }
 
-                    {(this.props.buttons && this.state.mouseOver) && <div style={this.styles.buttonDiv} id="buttons">
+                    {(this.props.buttons && this.state.mouseOver && !this.state.touchEnabled) && <div style={this.styles.buttonDiv} id="buttons">
                         <PrevButton onClick={this.prevSlide.bind(this)} style={this.styles.prevButton} />
                         <NextButton onClick={this.nextSlide.bind(this)} style={this.styles.nextButton} />
                     </div>}
