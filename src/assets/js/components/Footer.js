@@ -3,7 +3,7 @@ import React from 'react';
 let styles = {
   main:{
     fontSize:'.9rem',
-    backgroundColor:'black',
+    backgroundColor:'#201612',
     padding:'20px 5%',
     color:'white'
   }
@@ -12,7 +12,7 @@ let styles = {
 class Footer extends React.Component {
   render(){
     return  <section id="footer" style={styles.main}>
-              <div>©Copyright 2015 / All Rights Reserved</div>
+              <div>©Copyright 2016 / All Rights Reserved</div>
             </section>;
   };
 }

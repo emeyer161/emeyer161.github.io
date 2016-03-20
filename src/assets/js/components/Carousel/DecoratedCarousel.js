@@ -10,37 +10,80 @@ class DecoratedCarousel extends Carousel {
         
         this.newStyles = {
             slideInfo:{
+                position:'relative',
+                boxSizing:'border-box',
                 width:'100%',
                 height:'100%',
+                padding:'0 2.5%',
                 display:'inline-block',
-                verticalAlign:'top'
+                verticalAlign:'top',
             },
-            title:{
-                fontFamily:'verdana',
-                fontSize:'1.4rem'
-            },
-            body:{
-                fontFamily:'georgia',
-                lineHeight:'1.5',
-                fontSize:'1.2rem'
-            },
+                title:{
+                    fontFamily:'verdana',
+                    margin:'.3rem 0',
+                    fontSize:'1.4rem',
+                },
+                body:{
+                    fontFamily:'georgia',
+                    lineHeight:'1.5',
+                    fontSize:'1.1rem',
+                    margin:'0'
+                },
+                hr:{
+                    opacity:'.7',
+                    margin:'.1rem 2%',
+                },
+                linkContainer:{
+                    display:'block',
+                    marginTop:'.3rem'
+                },
+                    button:{
+                        zIndex:'2',
+                        position:'relative',
+                        marginRight:'.5rem',
+                        display:'inline-block',
+                        boxSizing:'border-box',
+                        // height:'30px',
+                        padding:'4px',
+                        borderRadius:'5px',
+                        fontSize: '.9rem',
+                        fontWeight: '500',
+                        textAlign:'left',
+                        backgroundColor:'#ad806c',
+                        border:'1px solid rgba(255, 255, 255, 0)',
+                        color:'white',
+                        ':hover': {
+                            border:'1px solid white',
+                            backgroundColor: 'rgba(255, 255, 255, 0.2)'
+                        }
+                    },
+                    text:{
+                        display:'inline-block',
+                        verticalAlign:'middle'
+                    },
+                    icon:{
+                        display:'inline-block',
+                        height:'.9rem',
+                        marginRight:'.3rem',
+                        verticalAlign:'middle'
+                    },
             buttonDiv:{
                 position:'relative',
                 top:'-60%',
                 height:'20%'
             },
-            prevButton:{
-                maxHeight:'100%',
-                maxWidth:'4%',
-                float:'left',
-                marginLeft:'1%',
-            },
-            nextButton:{
-                maxHeight:'100%',
-                maxWidth:'4%',
-                marginRight:'1%',
-                float:'right',
-            },
+                prevButton:{
+                    maxHeight:'100%',
+                    maxWidth:'4%',
+                    float:'left',
+                    marginLeft:'1%',
+                },
+                nextButton:{
+                    maxHeight:'100%',
+                    maxWidth:'4%',
+                    marginRight:'1%',
+                    float:'right',
+                },
             pagination:{
                 position:'relative',
                 height:'5%',
@@ -48,13 +91,15 @@ class DecoratedCarousel extends Carousel {
                 textAlign:'center',
                 lineHeight:'100%',
             },
-            pageDot:{
-                display:'inline-block',
-                margin:'0 10px',
-                fontSize: '3rem',
-                color:'white',
-                textShadow:'0px 0px 3px black'
-            }
+                pageDot:{
+                    zIndex:'1',
+                    position:'relative',
+                    display:'inline-block',
+                    margin:'0 10px',
+                    fontSize: '3rem',
+                    color:'white',
+                    textShadow:'0px 0px 3px black'
+                }
         };
         
         for (var attrname in this.newStyles) { this.styles[attrname] = this.newStyles[attrname]; }
@@ -62,10 +107,7 @@ class DecoratedCarousel extends Carousel {
 
     componentDidMount(){
         this.props.delay && this.setSlideInterval();
-
-        this.state.touchEnabled
-            ? this.initiateTouchHandlers()
-            : console.log('notouch')
+        this.state.touchEnabled && this.initiateTouchHandlers();
     }
 
     componentWillUnmount(){
@@ -121,16 +163,16 @@ class DecoratedCarousel extends Carousel {
 
     render(){
         if(this.props.displayInfo && (this.props.displayInfo == "left" || this.props.displayInfo == "right")){
-            this.styles.viewport.height = '100%';
             this.styles.viewport.width = '50%';
-            this.styles.slideInfo.height = '100%';
+            this.styles.viewport.height = '100%';
             this.styles.slideInfo.width = '50%';
+            this.styles.slideInfo.height = '100%';
             this.styles.slideInfo.float = this.props.displayInfo;
             this.styles.slideInfo.textAlign = this.props.displayInfo == 'left' ? 'right' : 'left';
         }else if(this.props.displayInfo){
             this.styles.viewport.width = '100%';
             this.styles.viewport.height = '50%';
-            this.styles.slideInfo.width = '80%';
+            this.styles.slideInfo.width = '100%';
             this.styles.slideInfo.height = '50%';
             this.styles.slideInfo.float = 'none';
             this.styles.slideInfo.textAlign = 'center';
@@ -145,7 +187,21 @@ class DecoratedCarousel extends Carousel {
                         
                         {this.props.displayInfo && <div style={this.styles.slideInfo} id="slideMeta">
                             <h1 style={this.styles.title}>{this.slides[this.state.currentSlide].title}</h1>
-                            <p style={this.styles.body}>{this.slides[this.state.currentSlide].body}</p>
+                            <p style={this.styles.body}>
+                                {this.slides[this.state.currentSlide].body}
+                            </p>
+                            <hr style={this.styles.hr} />
+                            <p style={[this.styles.body,{opacity:'.7'}]}>
+                                {this.slides[this.state.currentSlide].tools.join(' | ')}
+                            </p>
+                            {this.slides[this.state.currentSlide].links && <div style={this.styles.linkContainer}>
+                                {this.slides[this.state.currentSlide].links.map(function(link,i){
+                                    return  <a key={this.slides[this.state.currentSlide].title,i} style={this.styles.button} href={link.url} target="_blank">
+                                                {link.imgSrc && <img style={this.styles.icon} src={link.imgSrc} />}
+                                                <span style={this.styles.text}>{link.name}</span>
+                                            </a>
+                                }.bind(this))}
+                            </div>}
                         </div>}
                     </div>
                     
