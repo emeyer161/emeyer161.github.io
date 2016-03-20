@@ -37,35 +37,35 @@ class FeaturedWork extends React.Component {
                         {name: 'Open', url:'http://thethirstyterp.com/', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/TheThirstyTerp', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 1, title: 'The Riverstone Center', body: 'Marketing website for a small business massage studio. Html and styles implement the intended design of the business owner.', src: './dist/img/theRiverstoneCenter.png', 
+                { id: 1, title: 'The Riverstone Center', body: 'Marketing website for a small business massage studio. Html and styles portray the intended design of the business owner.', src: './dist/img/theRiverstoneCenter.png', 
                     tools:['Html', 'Css', 'Javascript', 'jQuery'],
                     links:[
                         {name: 'Open', url:'http://riverstonecenternj.com/', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/RiverStoneCenter', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 2, title: 'Eric Meyer | Web Developer', body: 'Personal web development portfolio site, with mobile touch and responsiveness. All styles, responsiveness and components were developed by me.', src: './dist/img/ericMeyerLogo.png', 
+                { id: 2, title: 'Eric Meyer | Web Developer', body: 'Personal web development portfolio site, with some mobile touch capabilities. All styles, responsiveness and components such as the carousel were developed by me.', src: './dist/img/ericMeyerLogo.png', 
                     tools:['Html', 'Css', 'Javascript', 'React'],
                     links:[
                         // {name: 'Open', url:'#', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/emeyer161.github.io', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 3, title: 'Middle Cities', body: 'A quiz app testing knowledge of city population data.', src: './dist/img/middleCitiesLogo.png', 
-                    tools:['Html', 'Css', 'Javascript', 'React'],
-                    links:[
-                        // {name: 'Open', url:'#', imgSrc: false},
-                        {name: 'View Source', url: 'https://github.com/emeyer161/Middle_Cities', imgSrc:'./dist/img/contact/githubLogo.png'},
-                    ]},
-                { id: 4, title: 'Checkingtons Listables', body: 'A simple but functional shopping checklist app.', src: './dist/img/checkingtonsListablesLogo.png', 
-                    tools:['Html', 'Css', 'Javascript', 'jQuery'],
-                    links:[
-                        // {name: 'Open', url:'#', imgSrc: false},
-                        {name: 'View Source', url: 'https://github.com/emeyer161/Checkingtons_Listables', imgSrc:'./dist/img/contact/githubLogo.png'},
-                    ]},
-                { id: 5, title: '#Guess', body: 'A quiz app implementing the Instagram API.', src: './dist/img/guessLogo.png', 
+                { id: 3, title: '#Guess', body: 'A single-page React app connecting to the live Instagram API. Flux methodology is used to store and manipulate the quiz state.', src: './dist/img/guessLogo.png', 
                     tools:['Html', 'Css', 'Javascript', 'React', 'Flux'],
                     links:[
                         // {name: 'Open', url:'#', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/Instaguess', imgSrc:'./dist/img/contact/githubLogo.png'},
+                    ]},
+                { id: 4, title: 'Middle Cities', body: 'A single-page React app quizzing knowledge of city population data. Flux methodology is used to store and manipulate the quiz state.', src: './dist/img/middleCitiesLogo.png', 
+                    tools:['Html', 'Css', 'Javascript', 'React', 'Flux'],
+                    links:[
+                        // {name: 'Open', url:'#', imgSrc: false},
+                        {name: 'View Source', url: 'https://github.com/emeyer161/Middle_Cities', imgSrc:'./dist/img/contact/githubLogo.png'},
+                    ]},
+                { id: 5, title: 'Checkingtons Listables', body: 'A simple but functional shopping checklist app.', src: './dist/img/checkingtonsListablesLogo.png', 
+                    tools:['Html', 'Css', 'Javascript', 'jQuery'],
+                    links:[
+                        // {name: 'Open', url:'#', imgSrc: false},
+                        {name: 'View Source', url: 'https://github.com/emeyer161/Checkingtons_Listables', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
             ]
         };
