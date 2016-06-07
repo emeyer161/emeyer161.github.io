@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from 'radium';
 import DecoratedCarousel from './Carousel/DecoratedCarousel';
 
 let styles = {
@@ -15,7 +16,16 @@ let styles = {
     },
     carousel:{
         width:'100%',
-        height:'350px',
+        height:'450px',
+        '@media (max-width: 1300px)': {
+            height:'525px',
+        },
+        '@media (max-width: 850px)': {
+            height:'600px',
+        },
+        '@media (max-width: 550px)': {
+            height:'675px',
+        },
         display:'inline-block',
         dotColor:'#ad806c'
     },
@@ -31,37 +41,43 @@ class FeaturedWork extends React.Component {
         super();
         this.state = {
             slides: [
-                { id: 0, title: 'The Thirsty Terp', body: 'A college sports and news blog for the University of Maryland. This app is still a work in progress, and the content does not necessarily reflect my views.', src: './dist/img/tttLogo.png', 
-                    tools:['Html', 'Css', 'Less', 'Javascript', 'React', 'Flux', 'PHP', 'Laravel', 'MySql'],
+                { id: 0, title: 'Reactris', body: 'My version of a Tetris clone, developed creatively, intentionally without researching typical game grid patterns. The game state including scoring, landscape blocks and active piece locations are held in Flux stores. Global events and user inputs are annouced through a dispatcher. The game visuals are displayed purely as styled DOM elements managed as React components. The responsively designed game board also features touch commands for full gameplay on mobile devices.', src: './dist/img/reactris.png', 
+                    tools:['Javascript', 'React', 'Flux'],
+                    links:[
+                        {name: 'Open', url:'http://emeyer161.github.io/Reactris/', imgSrc: false},
+                        {name: 'View Source', url: 'https://github.com/emeyer161/Reactris', imgSrc:'./dist/img/contact/githubLogo.png'},
+                    ]},
+                { id: 1, title: 'The Thirsty Terp', body: 'A live University of Maryland News and Sports Blog with active engagement from a group of public users. Build with Laravel, the Blade views currently employ a customized, mobile first implementation of Bootstrap. The site is managed entirely via my custom Content Management System. Writers, Editors and Admin user roles have permissions to work with a full featured content management suite including WYSIWYG editing and image uploads.', src: './dist/img/tttLogo.png', 
+                    tools:['Bootstrap', 'jQuery', 'Javascript', 'PHP', 'Laravel', 'MySql'],
                     links:[
                         {name: 'Open', url:'http://thethirstyterp.com/', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/TheThirstyTerp', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 1, title: 'The Riverstone Center', body: 'Marketing website for a small business massage studio. Html and styles portray the intended design of the business owner.', src: './dist/img/theRiverstoneCenter.png', 
-                    tools:['Html', 'Css', 'Javascript', 'jQuery'],
-                    links:[
-                        {name: 'Open', url:'http://riverstonecenternj.com/', imgSrc: false},
-                        {name: 'View Source', url: 'https://github.com/emeyer161/RiverStoneCenter', imgSrc:'./dist/img/contact/githubLogo.png'},
-                    ]},
-                { id: 2, title: 'Eric Meyer | Web Developer', body: 'Personal web development portfolio site, with some mobile touch capabilities. All styles, responsiveness and components such as the carousel were developed by me.', src: './dist/img/ericMeyerLogo.png', 
+                { id: 2, title: 'Eric Meyer | Web Developer', body: 'This portfolio was custom buit from the ground up in plain Javascript on React. The design and CSS styling of the site was developed with mobile first responsiveness in mind. I developed all functional components such as the carousel from scratch for use in unique personal projects. The carousel features some mobile touch capabilities, and was designed for easy inclusion as a customizeable module in a variety of projects.', src: './dist/img/ericMeyerLogo.png', 
                     tools:['Html', 'Css', 'Javascript', 'React'],
                     links:[
                         // {name: 'Open', url:'#', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/emeyer161.github.io', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 3, title: '#Guess', body: 'A single-page React app connecting to the live Instagram API. Flux methodology is used to store and manipulate the quiz state.', src: './dist/img/guessLogo.png', 
+                { id: 3, title: '#Guess', body: 'A single-page React app which gathers live images via the live Instagram API. Images are collected by a common tag, and were selected from further back for a better change of inappropriate images being flagged. Flux methodology is used to store and manipulate the quiz state.', src: './dist/img/guessLogo.png', 
                     tools:['Html', 'Css', 'Javascript', 'React', 'Flux'],
                     links:[
                         {name: 'Open', url:'http://emeyer161.github.io/Hashtag_Quiz/', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/Hashtag_Quiz', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 4, title: 'Middle Cities', body: 'A single-page React app quizzing knowledge of city population data. Flux methodology is used to store and manipulate the quiz state.', src: './dist/img/middleCitiesLogo.png', 
+                { id: 4, title: 'Middle Cities', body: 'A single-page React app quizzing knowledge of city population data. Questions are generated by randomly selecting a set of cities from a large JSON file of city data. Correct answers are calculated on the fly. Each play through is a different experience. Flux methodology is used to store and manipulate the quiz state.', src: './dist/img/middleCitiesLogo.png', 
                     tools:['Html', 'Css', 'Javascript'],
                     links:[
                         {name: 'Open', url:'http://emeyer161.github.io/Middle_Cities/index.html', imgSrc: false},
                         {name: 'View Source', url: 'https://github.com/emeyer161/Middle_Cities', imgSrc:'./dist/img/contact/githubLogo.png'},
                     ]},
-                { id: 5, title: 'Checkingtons Listables', body: 'A simple but functional shopping checklist app.', src: './dist/img/checkingtonsListablesLogo.png', 
+                { id: 5, title: 'The Riverstone Center', body: 'A marketing website rebuild for a small business massage studio. Coming from an identical Photoshop design, I worked closely with the owner to ensure that sites styles, formatting and responsiveness exactly match the design that he desired.', src: './dist/img/theRiverstoneCenter.png', 
+                    tools:['Html', 'Css', 'Javascript', 'jQuery'],
+                    links:[
+                        {name: 'Open', url:'http://riverstonecenternj.com/', imgSrc: false},
+                        {name: 'View Source', url: 'https://github.com/emeyer161/RiverStoneCenter', imgSrc:'./dist/img/contact/githubLogo.png'},
+                    ]},
+                { id: 6, title: 'Checkingtons Listables', body: 'A simple but functional shopping checklist app.', src: './dist/img/checkingtonsListablesLogo.png', 
                     tools:['Html', 'Css', 'Javascript', 'jQuery'],
                     links:[
                         {name: 'Open', url:'http://emeyer161.github.io/Checkingtons_Listables/index.html', imgSrc: false},
@@ -80,4 +96,4 @@ class FeaturedWork extends React.Component {
     };
 }
 
-export default FeaturedWork;
+export default Radium(FeaturedWork);
