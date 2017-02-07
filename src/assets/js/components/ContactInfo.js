@@ -82,7 +82,7 @@ class ContactInfo extends React.Component {
                             <div style={styles.text}>Skype</div>
                         </div>
                     </a>
-                    <a href='https://github.com/emeyer161' target='_blank'>
+                    <a href='https://github.com/flyrmyr' target='_blank'>
                         <div key={4} style={[styles.textBox, styles.bottomBox]}>
                             <img src='./dist/img/contact/githubLogo.png' style={styles.icon} />
                             <div style={styles.text}>Github</div>
